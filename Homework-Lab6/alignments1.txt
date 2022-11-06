@@ -1,0 +1,9 @@
+# Sentence pair (1) source length 8 target length 9 alignment score : 8.19117e-07 
+michael assumes that he will stay in the house
+NULL ({ 7 8 }) michael ({ 1 }) a ({ 2 }) dedus ({ 4 }) ca ({ 3 }) va ({ 5 }) ramane ({ 6 }) in ({ 9 }) casa ({ })
+# Sentence pair (2) source length 9 target length 9 alignment score : 3.77399e-05 
+michael assumes that michael will stay in the house
+NULL ({ 7 8 }) michael ({ 1 }) a ({ 2 }) dedus ({ }) ca ({ 3 }) michael ({ 4 }) va ({ 5 }) ramane ({ 6 }) in ({ 9 }) casa ({ })
+# Sentence pair (3) source length 10 target length 12 alignment score : 2.28585e-08 
+he assumes in the house that michael will stay in the house
+NULL ({ 3 4 10 11 }) a ({ 2 }) dedus ({ 1 }) in ({ 5 }) casa ({ }) ca ({ 6 }) michael ({ 7 }) va ({ 8 }) ramane ({ 9 }) in ({ 12 }) casa ({ })

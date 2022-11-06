@@ -1,0 +1,9 @@
+# Sentence pair (1) source length 9 target length 8 alignment score : 4.07123e-05 
+michael a dedus ca va ramane in casa
+NULL ({ 7 }) michael ({ 1 }) assumes ({ 2 }) that ({ 4 }) he ({ 3 }) will ({ 5 }) stay ({ 6 }) in ({ 8 }) the ({ }) house ({ })
+# Sentence pair (2) source length 9 target length 9 alignment score : 6.13449e-05 
+michael a dedus ca michael va ramane in casa
+NULL ({ 3 8 }) michael ({ 1 }) assumes ({ 2 }) that ({ 4 }) michael ({ 5 }) will ({ 6 }) stay ({ 7 }) in ({ 9 }) the ({ }) house ({ })
+# Sentence pair (3) source length 12 target length 10 alignment score : 2.15302e-06 
+a dedus in casa ca michael va ramane in casa
+NULL ({ 3 9 }) he ({ 2 }) assumes ({ 1 }) in ({ 4 }) the ({ }) house ({ }) that ({ 5 }) michael ({ 6 }) will ({ 7 }) stay ({ 8 }) in ({ 10 }) the ({ }) house ({ })
