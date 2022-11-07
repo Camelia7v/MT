@@ -155,6 +155,24 @@ def extract_consistent_phrases(table):
     return consistent_phrases_list
 
 
+def symmetrizationroen(source, target, allignment):
+    listenro = []
+    i = 0
+    for alignment_one in allignment:
+        if len(alignment_one) == 1:
+            listenro.append((source[i], target[alignment_one[0] - 1]))
+        i += 1
+    return listenro
+
+def symmetrizationenro(source, target, allignment):
+    listenro = []
+    i = 0
+    for alignment_one in allignment:
+        if len(alignment_one) == 1:
+            listenro.append((target[alignment_one[0] - 1], source[i]))
+        i += 1
+    return listenro
+
 if __name__ == "__main__":
 
     print("------------------------------------> RO-EN:")
@@ -182,7 +200,7 @@ if __name__ == "__main__":
     print()
 
     for i in range(len(source_sentences1)):
-        print(f"------------------------------------ Table {i+1} ------------------------------------")
+        print(f"------------------------------------ Table {i + 1} ------------------------------------")
         table = fill_matrix_with_zeros(len(target_sentences1[i].split(" ")), len(source_sentences1[i].split(" ")))
         print_matrix(create_alignments_table(table, source_sentences1[i], alignments1[i]))
         print()
@@ -214,12 +232,37 @@ if __name__ == "__main__":
     print()
 
     for i in range(len(source_sentences2)):
-        print(f"------------------------------------ Table {i+4} ------------------------------------")
+        print(f"------------------------------------ Table {i + 4} ------------------------------------")
         table = fill_matrix_with_zeros(len(target_sentences2[i].split(" ")), len(source_sentences2[i].split(" ")))
         print_matrix(create_alignments_table(table, source_sentences2[i], alignments2[i]))
         print()
         print(extract_consistent_phrases(table))
         print()
+
+    setenro = []
+    setroen = []
+
+    s = 'I want to go home'
+    t = 'Je veux aller chez moi'
+    a1 = [[1],[2],[3],[3],[5]]
+    a2 = [[1],[2],[4],[5],[5]]
+    setroen.append(symmetrizationenro(s.split(" "),t.split(" "),a1))
+    setenro.append(symmetrizationroen(t.split(" "), s.split(" "), a2))
+    allenro = setroen[0] + setenro[0]
+    allenro = list(dict.fromkeys(allenro))
+    print(allenro)
+
+    setenro = []
+    setroen = []
+
+    for source, target, allignment in zip(source_sentences1, target_sentences1, alignments1):
+        setenro.append(symmetrizationenro(source.split(" "), target.split(" "), allignment))
+    for source, target, allignment in zip(source_sentences2, target_sentences2, alignments2):
+        setroen.append(symmetrizationroen(source.split(" "), target.split(" "), allignment))
+    for i in range(len(setroen)):
+        allenro = setroen[i] + setenro[i]
+        allenro = list(dict.fromkeys(allenro))
+        print(allenro)
 
     # table = [[1, 0, 0],
     #          [0, 1, 0],
